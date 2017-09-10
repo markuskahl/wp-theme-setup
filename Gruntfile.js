@@ -15,6 +15,18 @@ module.exports = function(grunt) {
             src: 'include/.htaccess',
             dest: 'advanced-custom-fields-pro/.htaccess'
           },
+          bootstrap:{
+            expand: true,
+            cwd: 'bower_components/bootstrap/dist/',
+            src: '**',
+            dest: 'assets/bootstrap'
+          },
+          fontawesome:{
+            expand: true,
+            cwd: 'bower_components/font-awesome/',
+            src: ['css/**','fonts/**'],
+            dest: 'assets/font-awesome/'
+          },
           build: {
             files:[
               {
@@ -26,6 +38,7 @@ module.exports = function(grunt) {
                 'advanced-custom-fields-pro/.htaccess',
                 '!release',
                 '!node_modules/**',
+                '!bower_components/**',
                 '!src/**',
                 '!scripts/**',
                 '!Gruntfile.js',
@@ -104,6 +117,8 @@ module.exports = function(grunt) {
         'exec:clone_acf',
         'clean:acf',
         'exec:bower_install',
+        'copy:bootstrap',
+        'copy:fontawesome',
         'copy:acf',
         'css',
         'webpack',
