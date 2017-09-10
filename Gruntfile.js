@@ -48,7 +48,8 @@ module.exports = function(grunt) {
         },
         exec:{
           clone_acf: "git clone https://github.com/wp-premium/advanced-custom-fields-pro.git",
-          webpack: "webpack"
+          webpack: "webpack",
+          bower_install: "bower install"
         },
         less: {
           development: {
@@ -102,8 +103,10 @@ module.exports = function(grunt) {
       grunt.registerTask('install', [
         'exec:clone_acf',
         'clean:acf',
+        'exec:bower_install',
         'copy:acf',
         'css',
+        'webpack',
         'build'
       ]);
       

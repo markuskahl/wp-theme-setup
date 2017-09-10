@@ -1,10 +1,10 @@
 {
   "name": "wp-theme-setup",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "install": "grunt clean:acf && grunt install"
+    "install": "grunt install"
   },
   "author": "Author",
   "author_uri": "Author URI",
