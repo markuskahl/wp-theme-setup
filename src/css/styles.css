@@ -1,0 +1,9 @@
+body {
+  color: blue;
+}
+body div {
+  color: green;
+}
+body p {
+  margin: 2em;
+}

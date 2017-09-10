@@ -1,0 +1,29 @@
+{
+  "name": "wp-theme-setup",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "install": "grunt clean:acf && grunt install"
+  },
+  "author": "Author",
+  "author_uri": "Author URI",
+  "theme_uri": "Theme URI",
+  "license": "GNU General Public License v2 or later",
+  "license_uri": "http://www.gnu.org/licenses/gpl-2.0.html",
+  "textdomain": "Text Domain",
+  "devDependencies": {
+    "cli-color": "^1.2.0",
+    "grunt": "^1.0.1",
+    "grunt-contrib-clean": "^1.1.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-cssmin": "^2.2.1",
+    "grunt-contrib-less": "^1.4.1",
+    "grunt-contrib-uglify": "^3.0.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-exec": "^3.0.0",
+    "grunt-execute": "^0.2.2",
+    "ts-loader": "^2.3.6",
+    "typescript": "^2.5.2"
+  }
+}
