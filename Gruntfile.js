@@ -21,6 +21,12 @@ module.exports = function(grunt) {
             src: '**',
             dest: 'assets/bootstrap'
           },
+          jquery:{
+            expand: true,
+            cwd: 'bower_components/jquery/dist/',
+            src: '**',
+            dest: 'assets/jquery'
+          },
           fontawesome:{
             expand: true,
             cwd: 'bower_components/font-awesome/',
@@ -119,6 +125,7 @@ module.exports = function(grunt) {
         'clean:acf',
         'exec:bower_install',
         'copy:bootstrap',
+        'copy:jquery',
         'copy:fontawesome',
         'copy:acf',
         'css',
