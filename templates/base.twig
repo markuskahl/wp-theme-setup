@@ -6,7 +6,7 @@
 	</head>
 {% endblock %}
 
-	<body class="{{body_class}}" data-template="base.twig">
+	<body class="{{body_class}}">
 		<header class="header" >
 			{% block header %}
 				<div class="wrapper">
@@ -15,24 +15,25 @@
 					</h1>
 					<nav id="nav-main" class="nav-main" role="navigation">
 						{% include "menu.twig" with {'menu': menu.get_items} %}
-					</nav><!-- #nav -->
+					</nav>
 				</div>
 			{% endblock %}
 		</header>
 
-		<section id="content" role="main" class="content-wrapper">
+		<div id="content" class="content-wrapper">
 			{% if title %}<h1>{{title}}</h1>{% endif %}
-			<div class="wrapper {{sidebar_class}}">
+			
 				{% block content %}
 					Sorry, no content
 				{% endblock %}
-			</div>
+
 			{% if sidebar %}
 				<aside class="layout-sidebar">
 					{{sidebar}}
 				</aside>
 			{% endif %}
-		</section>
+
+			</div>
 
 		{% block footer %}
 			<footer id="footer">
@@ -41,7 +42,7 @@
 			{{ function('wp_footer') }}
 		{% endblock %}
 
-		<script src="js/bundle.min.js"></script>
+		<script src="{{ site.theme.link }}/js/bundle.min.js"></script>
 
 	</body>
 </html>
