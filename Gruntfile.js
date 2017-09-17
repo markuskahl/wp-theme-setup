@@ -44,7 +44,8 @@ module.exports = function(grunt) {
                 '!Gruntfile.js',
                 '!tsconfig.json',
                 '!webpack.config.js',
-                '!.git',
+                '!.vscode/**',
+                '!.git/**',
                 '!.gitignore',
                 '!package.json',
                 '!package-lock.json',
@@ -126,6 +127,8 @@ module.exports = function(grunt) {
       ]);
       
       grunt.registerTask('build', [
+        'css',
+        'webpack',
         'clean:release',
         'copy:build',
         'execute:build'
