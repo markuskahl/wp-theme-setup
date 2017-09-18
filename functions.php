@@ -18,6 +18,6 @@ if ( ! class_exists( 'Timber' ) ) {
 
 Timber::$dirname = array('templates', 'views');
 
-require_once '/include/WPSite.php';
+require_once 'include/WPSite.php';
 
 new WPSite();
