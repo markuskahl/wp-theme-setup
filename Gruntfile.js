@@ -6,15 +6,10 @@ module.exports = function(grunt) {
 
       grunt.initConfig({
         clean: {
-          acf: ['advanced-custom-fields-pro/.git/**'],
           git: ['.git/**'],
           release: ['release/**']  
         },
         copy:{
-          acf:{
-            src: 'include/.htaccess',
-            dest: 'advanced-custom-fields-pro/.htaccess'
-          },
           bootstrap:{
             expand: true,
             cwd: 'bower_components/bootstrap/dist/',
@@ -41,7 +36,6 @@ module.exports = function(grunt) {
                 '**/**',
                 'templates/.htaccess',
                 'include/.htaccess',
-                'advanced-custom-fields-pro/.htaccess',
                 '!release',
                 '!node_modules/**',
                 '!bower_components/**',
@@ -67,7 +61,6 @@ module.exports = function(grunt) {
           }
         },
         exec:{
-          clone_acf: "git clone https://github.com/wp-premium/advanced-custom-fields-pro.git",
           webpack: "webpack",
           bower_install: "bower install"
         },
@@ -121,13 +114,10 @@ module.exports = function(grunt) {
       grunt.registerTask('default', ['watch']);
 
       grunt.registerTask('install', [
-        'exec:clone_acf',
-        'clean:acf',
         'exec:bower_install',
         'copy:bootstrap',
         'copy:jquery',
         'copy:fontawesome',
-        'copy:acf',
         'css',
         'webpack',
         'build'
